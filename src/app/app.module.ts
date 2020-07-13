@@ -20,12 +20,14 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RegistraContattoComponent } from './pages/registra-contatto/registra-contatto.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ErrorComponentComponent } from './pages/error-component/error-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    RegistraContattoComponent
+    RegistraContattoComponent,
+    ErrorComponentComponent
   ],
   imports: [
     BrowserModule,

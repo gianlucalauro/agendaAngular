@@ -13,12 +13,12 @@ export class MainComponent implements OnInit {
 
   displayedColumns: string[] = ['nome', 'cognome', 'numero', 'email'];
 
-  constructor(private service: AgendaServiceService) { }
+  constructor(private service: AgendaServiceService, public router: Router) { }
 
   ngOnInit() {
     this.service.getTuttiContatti()
       .subscribe((data) => this.persona = data,
-        error => console.log("Gestire l'errore per la chiamata back-end"));
+        error => this.router.navigate(['/error']));
   }
 
   getContatti() {
