@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" type="button" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>Agenda</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button >
+    <mat-icon class="fa fa-github fa-3x" aria-hidden="true" (click)="goToGitHub()"></mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    
+    <button mat-raised-button color="primary" routerLink="/agenda" class="button">
+      Contatti
+    </button>
+
+    <button mat-raised-button color="primary" routerLink="/form" class="button"> 
+      Registra contatto
+    </button>
+
+  </mat-drawer>
+</mat-drawer-container>
+  
+
+<router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.button {
+    margin-left: 20px;
+}

@@ -1,0 +1,27 @@
+<h1>Registra un nuovo contatto</h1>
+
+<br>
+
+<div class="container">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="postData.nome">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+        <mat-label>Cognome</mat-label>
+        <input matInput [(ngModel)]="postData.cognome">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Numero</mat-label>
+        <input matInput [(ngModel)]="postData.numero">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="postData.email">
+    </mat-form-field>
+</div>
+
+<button mat-raised-button color="primary" (click)="creaContatto()" class="button"> Registra </button>
