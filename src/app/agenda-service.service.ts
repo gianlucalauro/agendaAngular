@@ -17,4 +17,8 @@ export class AgendaServiceService {
     return this.http.get(`http://localhost:8080/agenda/all`);
   }
 
+  public deleteContatto(identifier) {
+    return this.http.delete(`http://localhost:8080/agenda/delete/${identifier}`);
+  }
+
 }

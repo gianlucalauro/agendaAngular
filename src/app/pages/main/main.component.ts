@@ -9,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
   key: string;
+  identifier: string;
   persona: any;
 
-  displayedColumns: string[] = ['nome', 'cognome', 'numero', 'email'];
+  displayedColumns: string[] = ['id', 'nome', 'cognome', 'numero', 'email', 'azioni'];
 
   constructor(private service: AgendaServiceService, public router: Router) { }
 
@@ -23,6 +24,11 @@ export class MainComponent implements OnInit {
 
   getContatti() {
     this.service.getContatti(this.key).subscribe((data) => this.persona = data);
+  }
+
+  eliminaContatto() {
+    this.service.deleteContatto(this.identifier).subscribe();
+    //window.location.reload(); //Reload page
   }
 
 }
