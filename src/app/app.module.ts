@@ -21,6 +21,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { RegistraContattoComponent } from './pages/registra-contatto/registra-contatto.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ErrorComponentComponent } from './pages/error-component/error-component.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ErrorComponentComponent } from './pages/error-component/error-component
     MatSidenavModule,
     MatFormFieldModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [AgendaServiceService],
   bootstrap: [AppComponent]

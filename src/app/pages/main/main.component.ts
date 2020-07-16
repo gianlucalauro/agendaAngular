@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AgendaServiceService } from '../../agenda-service.service'
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
@@ -9,12 +10,19 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
   key: string;
-  identifier: string;
   persona: any;
 
   displayedColumns: string[] = ['id', 'nome', 'cognome', 'numero', 'email', 'azioni'];
 
-  constructor(private service: AgendaServiceService, public router: Router) { }
+  putData = {
+    id: '',
+    nome: '',
+    cognome: '',
+    numero: '',
+    email: '',
+  };
+
+  constructor(private service: AgendaServiceService, public router: Router, private http: HttpClient) { }
 
   ngOnInit() {
     this.service.getTuttiContatti()
@@ -26,9 +34,13 @@ export class MainComponent implements OnInit {
     this.service.getContatti(this.key).subscribe((data) => this.persona = data);
   }
 
-  eliminaContatto() {
-    this.service.deleteContatto(this.identifier).subscribe();
-    //window.location.reload(); //Reload page
+  eliminaContatto(idSelected: any) {
+    this.service.deleteContatto(idSelected.id).subscribe();
+    window.location.reload(); //Reload page
+  }
+
+  updateContatto() {
+    this.http.put(`http://localhost:8080/agenda/update`, this.putData);
   }
 
 }
