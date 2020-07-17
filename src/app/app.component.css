@@ -22,4 +22,10 @@
 a {
     color:inherit;
 }
+
+p {
+    text-align: right;
+    margin: 10px;
+    font-size: 12px;
+}
   
