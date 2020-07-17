@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { AgendaServiceService } from '../../agenda-service.service'
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -12,15 +12,7 @@ export class MainComponent implements OnInit {
   key: string;
   persona: any;
 
-  displayedColumns: string[] = ['id', 'nome', 'cognome', 'numero', 'email', 'azioni'];
-
-  putData = {
-    id: '',
-    nome: '',
-    cognome: '',
-    numero: '',
-    email: '',
-  };
+  displayedColumns: string[] = ['nome', 'cognome', 'numero', 'email', 'azioni'];
 
   constructor(private service: AgendaServiceService, public router: Router, private http: HttpClient) { }
 
@@ -39,8 +31,9 @@ export class MainComponent implements OnInit {
     window.location.reload(); //Reload page
   }
 
-  updateContatto() {
-    this.http.put(`http://localhost:8080/agenda/update`, this.putData);
+  passaContatto(person: any) {
+    this.service.details = person; 
+    this.router.navigate(['/modifica'])
   }
 
 }

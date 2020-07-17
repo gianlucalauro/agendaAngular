@@ -22,13 +22,15 @@ import { RegistraContattoComponent } from './pages/registra-contatto/registra-co
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ErrorComponentComponent } from './pages/error-component/error-component.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModificaContattoComponent } from './pages/modifica-contatto/modifica-contatto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     RegistraContattoComponent,
-    ErrorComponentComponent
+    ErrorComponentComponent,
+    ModificaContattoComponent
   ],
   imports: [
     BrowserModule,

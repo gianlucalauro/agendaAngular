@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class AgendaServiceService {
 
+  details: any;
+
   constructor(private http: HttpClient, public router: Router) { }
 
   public getContatti(key) {
@@ -20,5 +22,6 @@ export class AgendaServiceService {
   public deleteContatto(identifier) {
     return this.http.delete(`http://localhost:8080/agenda/delete/${identifier}`);
   }
+
 
 }
