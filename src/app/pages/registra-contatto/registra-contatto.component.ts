@@ -24,7 +24,7 @@ export class RegistraContattoComponent implements OnInit {
     nome: new FormControl('', Validators.required),
     cognome: new FormControl('', Validators.required),
     numero: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$")]),
-    email: new FormControl('', Validators.required)
+    email: new FormControl('', [Validators.required, Validators.email])
   })
   
   constructor(private http: HttpClient, public router: Router, private service: AgendaServiceService) { }
