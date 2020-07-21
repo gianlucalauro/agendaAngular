@@ -1,32 +1,34 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" type="button" (click)="drawer.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <span>Agenda</span>
-  <span class="example-spacer"></span>
-  <a href="https://github.com/RyalZX/agendaAngular">
-    <button mat-icon-button class="fa fa-github fa-2x" aria-hidden="true"></button>
-  </a>
-
-</mat-toolbar>
-
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    
-    <button mat-raised-button color="primary" routerLink="/agenda" class="button">
-      Contatti
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" type="button" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
     </button>
-
-    <button mat-raised-button color="primary" routerLink="/form" class="button"> 
-      Registra contatto
-    </button>
-
-  </mat-drawer>
-</mat-drawer-container>
   
+    <span>Agenda</span>
+    <span class="example-spacer"></span>
+    <a href="https://github.com/RyalZX/agendaAngular">
+      <button mat-icon-button class="fa fa-github fa-2x" aria-hidden="true"></button>
+    </a>
+  
+  </mat-toolbar>
+  
+  <mat-drawer-container class="example-container" autosize>
 
-<router-outlet></router-outlet>
+    <br>
 
-<br>
-<p>developed by Gianluca Lauro</p>
+    <router-outlet></router-outlet>
+
+    <br>
+    <p>developed by Gianluca Lauro</p>
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      
+      <button mat-raised-button color="primary" routerLink="/agenda" class="button">
+        Contatti
+      </button>
+        <br> <br>
+      <button mat-raised-button color="primary" routerLink="/form" class="button"> 
+        Registra contatto
+      </button>
+  
+    </mat-drawer>
+</mat-drawer-container>

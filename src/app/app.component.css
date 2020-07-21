@@ -1,26 +1,5 @@
-.example-spacer {
-    flex: 1 1 auto;
-}
-
-.example-container {
-    width: 303px;
-    height: 80px;
-}
-  
-.example-sidenav {
-    padding: 20px;
-}
-
 .button {
     margin-left: 20px;
-}
-
-.mat-icon {
-    margin-right: 15px;
-}
-
-a {
-    color:inherit;
 }
 
 p {
@@ -28,4 +7,20 @@ p {
     margin: 10px;
     font-size: 12px;
 }
-  
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-container {
+    width: 100%;
+    height: 100%;
+}
+
+.example-sidenav {
+    padding: 20px;
+}
+
+a {
+    color:inherit;
+}
