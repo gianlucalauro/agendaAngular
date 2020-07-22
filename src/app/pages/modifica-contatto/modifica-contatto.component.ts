@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-modifica-contatto',
   templateUrl: './modifica-contatto.component.html',
-  styleUrls: ['./modifica-contatto.component.css']
+  styleUrls: ['./modifica-contatto.component.scss']
 })
 export class ModificaContattoComponent implements OnInit {
 

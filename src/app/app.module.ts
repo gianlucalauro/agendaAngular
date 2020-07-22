@@ -23,6 +23,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ErrorComponentComponent } from './pages/error-component/error-component.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModificaContattoComponent } from './pages/modifica-contatto/modifica-contatto.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ModificaContattoComponent } from './pages/modifica-contatto/modifica-co
     MatFormFieldModule,
     RouterModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatSlideToggleModule
   ],
   providers: [AgendaServiceService],
   bootstrap: [AppComponent]

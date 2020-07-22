@@ -1,12 +1,12 @@
-<h1> Contatti </h1>    
+<h1> Contatti </h1>
 
 <p>
-    <mat-form-field class="example-full-width">
-        <mat-label>Filtro</mat-label>
-        <textarea matInput placeholder="Inserisci una keyword" [(ngModel)]="key" name="keyword"></textarea>
-    </mat-form-field> 
+  <mat-form-field class="example-full-width">
+    <mat-label>Filtro</mat-label>
+    <textarea matInput placeholder="Inserisci una keyword" [(ngModel)]="key" name="keyword"></textarea>
+  </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="getContatti()" class="button"> Ricerca </button>
+  <button mat-raised-button color="primary" (click)="getContatti()" class="button"> Ricerca </button>
 </p>
 
 <br> <br>
@@ -42,8 +42,13 @@
     <th mat-header-cell *matHeaderCellDef> Azioni </th>
     <td mat-cell *matCellDef="let person">
 
-      <button mat-icon-button class="fa fa-pencil-square-o fa-2x" aria-hidden="true" type="button" (click)="passaContatto(person)"></button>
-      <button mat-icon-button class="fa fa-trash fa-2x" aria-hidden="true" type="button" (click)="eliminaContatto(person)"></button>
+        <button mat-icon-button (click)="passaContatto(person)"> 
+          <mat-icon class="fa fa-pencil-square-o fa-2x" aria-hidden="true"> </mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="eliminaContatto(person)"> 
+          <mat-icon class="fa fa-trash fa-2x" aria-hidden="true"> </mat-icon>
+        </button>
 
     </td>
   </ng-container>

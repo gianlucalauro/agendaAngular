@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-registra-contatto',
   templateUrl: './registra-contatto.component.html',
-  styleUrls: ['./registra-contatto.component.css']
+  styleUrls: ['./registra-contatto.component.scss']
 })
 export class RegistraContattoComponent implements OnInit {
   persona: any;

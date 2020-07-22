@@ -3,28 +3,28 @@
 <br>
 
 <form [formGroup]="agendaForm">
-    <mat-form-field appearance="fill">
-        <mat-label>Nome</mat-label>
-        <input matInput [(ngModel)]="postData.nome" formControlName="nome" minlength="3" maxlength="20">
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="postData.nome" formControlName="nome" minlength="3" maxlength="20">
+  </mat-form-field>
 
-    <mat-form-field appearance="fill" class="container">
-        <mat-label>Cognome</mat-label>
-        <input matInput [(ngModel)]="postData.cognome" formControlName="cognome" minlength="3" maxlength="20">
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-        <mat-label>Numero</mat-label>
-        <input matInput [(ngModel)]="postData.numero" formControlName="numero" minlength="10" maxlength="10">
-    </mat-form-field>
+  <mat-form-field appearance="fill" class="container">
+    <mat-label>Cognome</mat-label>
+    <input matInput [(ngModel)]="postData.cognome" formControlName="cognome" minlength="3" maxlength="20">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Numero</mat-label>
+    <input matInput [(ngModel)]="postData.numero" formControlName="numero" minlength="10" maxlength="10">
+  </mat-form-field>
 
-    <mat-form-field appearance="fill" class="container">
-        <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="postData.email" formControlName="email" minlength="10" maxlength="100">
-    </mat-form-field>
+  <mat-form-field appearance="fill" class="container">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="postData.email" formControlName="email" minlength="10" maxlength="100">
+  </mat-form-field>
 
-    <br>
+  <br>
 
-    <button mat-raised-button color="primary" (click)="creaContatto()" [disabled]="!agendaForm.valid"> Registra </button>
-    <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
+  <button mat-raised-button color="primary" (click)="creaContatto()" [disabled]="!agendaForm.valid"> Registra </button>
+  <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
 </form>
