@@ -1,31 +1,36 @@
-<h1>Modifica il contatto</h1>
-
-<br>
-
-<form [formGroup]="agendaForm">
-  <mat-form-field appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="putData.nome" formControlName="nome" minlength="3" maxlength="20">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="container">
-    <mat-label>Cognome</mat-label>
-    <input matInput [(ngModel)]="putData.cognome" formControlName="cognome" minlength="3" maxlength="20">
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Numero</mat-label>
-    <input matInput [(ngModel)]="putData.numero" formControlName="numero" minlength="10" maxlength="10">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="container">
-    <mat-label>Email</mat-label>
-    <input matInput type="email" [(ngModel)]="putData.email" formControlName="email" minlength="10" maxlength="100">
-  </mat-form-field>
+<mat-card>
+  <h1>
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    Modifica il contatto
+  </h1>
 
   <br>
 
-  <button mat-raised-button color="primary" [disabled]="!agendaForm.valid" (click)="updateContatto()"> Modifica
-  </button>
-  <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
-</form>
+  <form [formGroup]="agendaForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="putData.nome" formControlName="nome" minlength="3" maxlength="20">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+      <mat-label>Cognome</mat-label>
+      <input matInput [(ngModel)]="putData.cognome" formControlName="cognome" minlength="3" maxlength="20">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Numero</mat-label>
+      <input matInput [(ngModel)]="putData.numero" formControlName="numero" minlength="10" maxlength="10">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="putData.email" formControlName="email" minlength="10" maxlength="100">
+    </mat-form-field>
+
+    <br>
+
+    <button mat-raised-button color="primary" [disabled]="!agendaForm.valid" (click)="updateContatto()"> Modifica
+    </button>
+    <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
+  </form>
+</mat-card>

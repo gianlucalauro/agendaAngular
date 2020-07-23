@@ -3,7 +3,7 @@
 
 .alternative {
   $my-primary: mat-palette($mat-purple, 800);
-  $my-accent: mat-palette($mat-amber, 800);
+  $my-accent: mat-palette($mat-pink, A400);
   $my-theme: mat-dark-theme($my-primary, $my-accent);
   @include angular-material-theme($my-theme);
 }

@@ -9,7 +9,7 @@
 
     <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled"
       (click)="changeTheme()">
-      Dark mode
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
     </mat-slide-toggle>
 
     <a href="https://github.com/RyalZX/agendaAngular">
@@ -26,17 +26,20 @@
 
     <router-outlet></router-outlet>
 
-    <br>
-    <p>developed by Gianluca Lauro</p>
-
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <button mat-raised-button color="primary" routerLink="/agenda" class="button">
+        <i class="fa fa-address-book" aria-hidden="true"></i>
         Contatti
       </button>
       <br> <br>
       <button mat-raised-button color="primary" routerLink="/form" class="button">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
         Registra contatto
       </button>
+
+      <br>
+      <p>developed by Gianluca Lauro</p>
+
     </mat-drawer>
   </mat-drawer-container>
 </div>

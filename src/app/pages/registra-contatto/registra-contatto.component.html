@@ -1,30 +1,40 @@
-<h1>Registra un nuovo contatto</h1>
-
-<br>
-
-<form [formGroup]="agendaForm">
-  <mat-form-field appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput [(ngModel)]="postData.nome" formControlName="nome" minlength="3" maxlength="20">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="container">
-    <mat-label>Cognome</mat-label>
-    <input matInput [(ngModel)]="postData.cognome" formControlName="cognome" minlength="3" maxlength="20">
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Numero</mat-label>
-    <input matInput [(ngModel)]="postData.numero" formControlName="numero" minlength="10" maxlength="10">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="container">
-    <mat-label>Email</mat-label>
-    <input matInput [(ngModel)]="postData.email" formControlName="email" minlength="10" maxlength="100">
-  </mat-form-field>
+<mat-card>
+  <h1>
+    <i class="fa fa-user-plus" aria-hidden="true"></i>
+    Registra un nuovo contatto
+  </h1>
 
   <br>
 
-  <button mat-raised-button color="primary" (click)="creaContatto()" [disabled]="!agendaForm.valid"> Registra </button>
-  <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
-</form>
+  <form [formGroup]="agendaForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="postData.nome" formControlName="nome" minlength="3" maxlength="20">
+      <mat-error>Inserire un nome valido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+      <mat-label>Cognome</mat-label>
+      <input matInput [(ngModel)]="postData.cognome" formControlName="cognome" minlength="3" maxlength="20">
+      <mat-error>Inserire un cognome valido</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Numero</mat-label>
+      <input matInput [(ngModel)]="postData.numero" formControlName="numero" minlength="10" maxlength="10">
+      <mat-error>Inserire un numero valido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="postData.email" formControlName="email" minlength="10" maxlength="100">
+      <mat-error>Inserire una mail valida</mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-raised-button color="primary" (click)="creaContatto()" [disabled]="!agendaForm.valid"> Registra
+    </button>
+    <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
+  </form>
+</mat-card>
