@@ -25,6 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModificaContattoComponent } from './pages/modifica-contatto/modifica-contatto.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { RegistraAccountComponent } from './pages/Account/registra-account/registra-account.component';
+import { LoginComponent } from './pages/Account/login/login.component';
+import { LogoutComponent } from './pages/Account/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MainComponent,
     RegistraContattoComponent,
     ErrorComponentComponent,
-    ModificaContattoComponent
+    ModificaContattoComponent,
+    RegistraAccountComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

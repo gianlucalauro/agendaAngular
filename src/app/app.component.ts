@@ -19,4 +19,9 @@ export class AppComponent {
     this.isTrue = !this.isTrue;
   }
 
+  logOut() {
+    //setterò la variabile loggedin a null
+    window.location.reload();
+  }
+
 }

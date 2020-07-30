@@ -45,6 +45,7 @@ export class RegistraContattoComponent implements OnInit {
     this.postData.cognome = '';
     this.postData.numero = '';
     this.postData.email = '';
+    //settare l'id dell'account
   }
 
 }

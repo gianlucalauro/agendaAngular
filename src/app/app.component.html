@@ -36,6 +36,22 @@
         <i class="fa fa-user-plus" aria-hidden="true"></i>
         Registra contatto
       </button>
+      <div class="account">
+      <button mat-raised-button color="primary" routerLink="/login" class="button">
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+        Login
+      </button>
+      <br> <br>
+      <button mat-raised-button color="primary" (click)="logOut()" class="button">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Logout
+      </button>
+      <br> <br>
+      <button mat-raised-button color="primary" routerLink="/registrazione" class="button">
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        Registra account
+      </button>
+    </div>
 
       <br>
       <p>developed by Gianluca Lauro</p>

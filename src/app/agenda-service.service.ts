@@ -23,5 +23,9 @@ export class AgendaServiceService {
     return this.http.delete(`http://localhost:8080/agenda/delete/${identifier}`);
   }
 
+  public getAccount(nickname, password) {
+    return this.http.get(`http://localhost:8080/account/findaccount/?nickname=${nickname}&password=${password}`);
+  }
+
 
 }
