@@ -9,23 +9,31 @@ export class AgendaServiceService {
 
   details: any;
 
+  userLoggedin = {
+    id: "",
+    nickname: "",
+  };
+
   constructor(private http: HttpClient, public router: Router) { }
 
-  public getContatti(key) {
-    return this.http.get(`http://localhost:8080/agenda/all/?keyword=${key}`);
+  public getContatti(id_contatto = this.userLoggedin.id ,key) {
+    return this.http.get(`http://localhost:8080/contacts/${id_contatto}?keyword=${key}`);
   }
 
-  public getTuttiContatti() {
-    return this.http.get(`http://localhost:8080/agenda/all`);
+  public getTuttiContatti(id_contatto = this.userLoggedin.id) {
+    return this.http.get(`http://localhost:8080/contacts/${id_contatto}`);
   }
 
   public deleteContatto(identifier) {
-    return this.http.delete(`http://localhost:8080/agenda/delete/${identifier}`);
+    return this.http.delete(`http://localhost:8080/contacts/${identifier}`);
   }
 
   public getAccount(nickname, password) {
-    return this.http.get(`http://localhost:8080/account/findaccount/?nickname=${nickname}&password=${password}`);
+    return this.http.get(`http://localhost:8080/account/?nickname=${nickname}&password=${password}`);
   }
 
+  public test() {
+    return this.http.get('http://localhost:8080/contacts/test');
+  }
 
 }

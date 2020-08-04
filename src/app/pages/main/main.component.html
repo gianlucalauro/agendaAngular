@@ -1,9 +1,12 @@
 <mat-card>
-  <h1> 
+  <h1>
     <i class="fa fa-user-circle" aria-hidden="true"></i>
     Contatti
   </h1>
 
+  <div *ngIf="isLogged">
+    Ciao {{service.userLoggedin.nickname}}!
+  </div>
 
   <p>
     <mat-form-field class="example-full-width">

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AgendaServiceService } from '../../../agenda-service.service'
 
 @Component({
   selector: 'app-registra-account',
@@ -10,9 +11,17 @@ import { Router } from '@angular/router';
 })
 export class RegistraAccountComponent implements OnInit {
 
-  constructor(private http: HttpClient, public router: Router) { }
+  constructor(private http: HttpClient, public router: Router, public service: AgendaServiceService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.service.test()
+    .subscribe( 
+      data => console.log('nice'),
+      error => console.log('bad')
+        //this.router.navigate(['/error'])
+    );
+
   }
 
   registrazioneForm = new FormGroup({

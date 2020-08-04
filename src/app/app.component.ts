@@ -7,6 +7,7 @@ import {ThemePalette} from '@angular/material/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'agenda';
   showFiller = false;
   isTrue: boolean = false;
@@ -23,5 +24,5 @@ export class AppComponent {
     //setterò la variabile loggedin a null
     window.location.reload();
   }
-
+  
 }

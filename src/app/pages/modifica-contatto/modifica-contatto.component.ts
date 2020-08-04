@@ -39,7 +39,7 @@ export class ModificaContattoComponent implements OnInit {
   }
 
   updateContatto() {
-    this.http.put(`http://localhost:8080/agenda/update`, this.putData).subscribe();
+    this.http.put(`http://localhost:8080/contacts/`, this.putData).subscribe();
     this.router.navigate(['/agenda']); //redirect to the agenda
   }
 

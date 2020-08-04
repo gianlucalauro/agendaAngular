@@ -12,12 +12,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegistraContattoComponent implements OnInit {
   persona: any;
 
-  url = "http://localhost:8080/agenda/add";
+  url = "http://localhost:8080/contacts/";
   postData = {
     nome: '',
     cognome: '',
     numero: '',
     email: '',
+    id_account: this.service.userLoggedin.id,
   };
 
   agendaForm = new FormGroup({
@@ -30,9 +31,11 @@ export class RegistraContattoComponent implements OnInit {
   constructor(private http: HttpClient, public router: Router, private service: AgendaServiceService) { }
 
   ngOnInit() {
-    this.service.getTuttiContatti() //control if the back-end service is off
-      .subscribe((data) => this.persona = data,
-        error => this.router.navigate(['/error']));
+
+    if (this.service.userLoggedin.id == "") {
+      this.router.navigate(['/logout']);
+    }
+
   }
 
   creaContatto() {
@@ -45,7 +48,6 @@ export class RegistraContattoComponent implements OnInit {
     this.postData.cognome = '';
     this.postData.numero = '';
     this.postData.email = '';
-    //settare l'id dell'account
   }
 
 }

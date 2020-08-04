@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AgendaServiceService } from '../../agenda-service.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error-component',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: AgendaServiceService, private router: Router) { }
+
+  persona: any;
 
   ngOnInit(): void {
   }

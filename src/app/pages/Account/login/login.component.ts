@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendaServiceService } from '../../../agenda-service.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,12 @@ import { AgendaServiceService } from '../../../agenda-service.service'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: AgendaServiceService) { }
+  constructor(public service: AgendaServiceService, public router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    
+
   }
 
   loggedIn = {
@@ -22,9 +26,12 @@ export class LoginComponent implements OnInit {
     //chiamata rest per il controllo delle credenziali
     this.service.getAccount(this.loggedIn.nickname, this.loggedIn.password).subscribe(
       (response : any) => {
-        if(response == null) {
-          //window.location.reload();
-          //document.getElementById("name").innerHTML="This is <u>my test</u> sample"
+        if(response != null) {
+          this.service.userLoggedin.id = response.id;
+          this.service.userLoggedin.nickname = response.nickname;
+          this.router.navigate(['/agenda']);
+        } else {
+          document.getElementById("erroreLogin").innerHTML="Errore, nickname o password errati"
         }
       }
     );

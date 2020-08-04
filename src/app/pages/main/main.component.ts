@@ -16,14 +16,23 @@ export class MainComponent implements OnInit {
 
   constructor(private service: AgendaServiceService, public router: Router, private http: HttpClient) { }
 
+  isLogged: boolean = false;
+
   ngOnInit() {
-    this.service.getTuttiContatti()
+
+    if (this.service.userLoggedin.id == "") {
+      this.router.navigate(['/logout']);
+    } else if (this.service.userLoggedin.nickname != "") {
+      this.isLogged = true;
+      this.service.getTuttiContatti()
       .subscribe((data) => this.persona = data,
         error => this.router.navigate(['/error']));
+    }
+
   }
 
   getContatti() {
-    this.service.getContatti(this.key).subscribe((data) => this.persona = data);
+    this.service.getContatti(this.service.userLoggedin.id ,this.key).subscribe((data) => this.persona = data);
   }
 
   eliminaContatto(idSelected: any) {
