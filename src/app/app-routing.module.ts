@@ -7,6 +7,7 @@ import { ModificaContattoComponent } from './pages/modifica-contatto/modifica-co
 import { RegistraAccountComponent } from './pages/Account/registra-account/registra-account.component';
 import { LoginComponent } from './pages/Account/login/login.component';
 import { LogoutComponent } from './pages/Account/logout/logout.component';
+import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 
 const routes: Routes = [
   {path: "", redirectTo:"agenda", pathMatch:"full"},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: "modifica", component: ModificaContattoComponent},
   {path: "registrazione", component: RegistraAccountComponent},
   {path: "login", component: LoginComponent},
-  {path: "logout", component: LogoutComponent}
+  {path: "logout", component: LogoutComponent},
+  {path: "coronavirus", component: CoronavirusComponent}
 ];
 
 @NgModule({

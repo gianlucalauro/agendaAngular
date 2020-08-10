@@ -28,6 +28,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { RegistraAccountComponent } from './pages/Account/registra-account/registra-account.component';
 import { LoginComponent } from './pages/Account/login/login.component';
 import { LogoutComponent } from './pages/Account/logout/logout.component';
+import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LogoutComponent } from './pages/Account/logout/logout.component';
     ModificaContattoComponent,
     RegistraAccountComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    CoronavirusComponent
   ],
   imports: [
     BrowserModule,

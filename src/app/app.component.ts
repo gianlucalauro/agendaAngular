@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   logOut() {
-    //setterò la variabile loggedin a null
+    localStorage.removeItem("Account");
     window.location.reload();
   }
   

@@ -13,13 +13,13 @@ export class RegistraAccountComponent implements OnInit {
 
   constructor(private http: HttpClient, public router: Router, public service: AgendaServiceService) { }
 
+  test: any;
+
   ngOnInit() {
 
-    this.service.test()
-    .subscribe( 
-      data => console.log('nice'),
-      error => console.log('bad')
-        //this.router.navigate(['/error'])
+    this.service.test().subscribe(
+      (data) => this.test = data,
+      (error) => this.service.handleError(error)
     );
 
   }
@@ -37,7 +37,7 @@ export class RegistraAccountComponent implements OnInit {
 
   registraAccount() {
     this.http.post(this.url, this.postData).subscribe();
-    this.router.navigate(['/agenda']); //redirect to the agenda
+    this.router.navigate(['/agenda']);
   }
 
   resetAll() {

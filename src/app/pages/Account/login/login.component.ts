@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendaServiceService } from '../../../agenda-service.service'
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public service: AgendaServiceService, public router: Router) { }
+  constructor(public service: AgendaServiceService, public router: Router, public http: HttpClient) { }
+
+  test: any;
 
   ngOnInit() {
 
-    
+    this.service.test().subscribe(
+      (data) => this.test = data,
+      (error) => this.service.handleError(error)
+    );
+
+    if(this.service.account != undefined) {
+      this.router.navigate(['/agenda']);
+    }
 
   }
 
@@ -27,17 +37,15 @@ export class LoginComponent implements OnInit {
     this.service.getAccount(this.loggedIn.nickname, this.loggedIn.password).subscribe(
       (response : any) => {
         if(response != null) {
-          this.service.userLoggedin.id = response.id;
-          this.service.userLoggedin.nickname = response.nickname;
-          this.router.navigate(['/agenda']);
+          let Account = {id: response.id, nickname: response.nickname}
+          localStorage.setItem("Account", JSON.stringify(Account));
+          location.reload();
         } else {
           document.getElementById("erroreLogin").innerHTML="Errore, nickname o password errati"
         }
       }
     );
 
-    /* se la risposta è positiva allora l'utente verrà reinderizzato all'agenda con tutti i suoi contatti */
-    /* altrimenti verrà avvisato delle credenziali errate */
   }
 
   resetAll() {

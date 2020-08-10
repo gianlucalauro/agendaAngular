@@ -18,7 +18,7 @@ export class RegistraContattoComponent implements OnInit {
     cognome: '',
     numero: '',
     email: '',
-    id_account: this.service.userLoggedin.id,
+    id_account: '',
   };
 
   agendaForm = new FormGroup({
@@ -32,15 +32,17 @@ export class RegistraContattoComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.service.userLoggedin.id == "") {
+    if (this.service.account == undefined) {
       this.router.navigate(['/logout']);
+    } else {
+      this.postData.id_account = this.service.account.id;
     }
 
   }
 
   creaContatto() {
     this.http.post(this.url, this.postData).subscribe();
-    this.router.navigate(['/agenda']); //redirect to the agenda
+    this.router.navigate(['/agenda']);
   }
 
   resetAll() {

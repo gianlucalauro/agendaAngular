@@ -14,30 +14,27 @@ export class MainComponent implements OnInit {
 
   displayedColumns: string[] = ['nome', 'cognome', 'numero', 'email', 'azioni'];
 
-  constructor(private service: AgendaServiceService, public router: Router, private http: HttpClient) { }
-
-  isLogged: boolean = false;
+  constructor(public service: AgendaServiceService, public router: Router, private http: HttpClient) { }
 
   ngOnInit() {
 
-    if (this.service.userLoggedin.id == "") {
-      this.router.navigate(['/logout']);
-    } else if (this.service.userLoggedin.nickname != "") {
-      this.isLogged = true;
+    if (this.service.account != undefined) {
       this.service.getTuttiContatti()
       .subscribe((data) => this.persona = data,
-        error => this.router.navigate(['/error']));
+        error => this.service.handleError(error));
+    } else {
+      this.router.navigate(['/logout']);
     }
 
   }
 
   getContatti() {
-    this.service.getContatti(this.service.userLoggedin.id ,this.key).subscribe((data) => this.persona = data);
+    this.service.getContatti(this.service.account.id ,this.key).subscribe((data) => this.persona = data);
   }
 
   eliminaContatto(idSelected: any) {
     this.service.deleteContatto(idSelected.id).subscribe();
-    window.location.reload(); //Reload page
+    window.location.reload();
   }
 
   passaContatto(person: any) {
