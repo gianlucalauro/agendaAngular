@@ -18,7 +18,7 @@ export class RegistraContattoComponent implements OnInit {
     cognome: '',
     numero: '',
     email: '',
-    id_account: '',
+    idAccount: '',
   };
 
   agendaForm = new FormGroup({
@@ -35,7 +35,7 @@ export class RegistraContattoComponent implements OnInit {
     if (this.service.account == undefined) {
       this.router.navigate(['/logout']);
     } else {
-      this.postData.id_account = this.service.account.id;
+      this.postData.idAccount = this.service.account.id;
     }
 
   }
