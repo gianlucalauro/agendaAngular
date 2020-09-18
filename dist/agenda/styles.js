@@ -486,8 +486,8 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente\Documents\agendaAngular\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-module.exports = __webpack_require__(/*! C:\Users\Utente\Documents\agendaAngular\src\styles.scss */"./src/styles.scss");
+__webpack_require__(/*! D:\File\Documenti\Agenda\agendaAngularMongoDB\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! D:\File\Documenti\Agenda\agendaAngularMongoDB\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })
