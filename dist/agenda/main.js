@@ -47,19 +47,19 @@ class AgendaServiceService {
         this.account = JSON.parse(localStorage.getItem("Account"));
     }
     getContatti(id_account = this.account.id, key) {
-        return this.http.get(`http://localhost:8080/contacts/${id_account}?keyword=${key}`);
+        return this.http.get(`https://agendaspring.herokuapp.com/${id_account}?keyword=${key}`);
     }
     getTuttiContatti(id_account = this.account.id) {
-        return this.http.get(`http://localhost:8080/contacts/${id_account}`);
+        return this.http.get(`https://agendaspring.herokuapp.com/${id_account}`);
     }
     deleteContatto(identifier) {
-        return this.http.delete(`http://localhost:8080/contacts/${identifier}`);
+        return this.http.delete(`https://agendaspring.herokuapp.com/${identifier}`);
     }
     getAccount(nickname, password) {
         return this.http.get(`http://localhost:8080/account/?nickname=${nickname}&password=${password}`);
     }
     test() {
-        return this.http.get('http://localhost:8080/contacts/test');
+        return this.http.get('https://agendaspring.herokuapp.com/test');
     }
     handleError(error) {
         if (error.status == 0) {
@@ -1107,7 +1107,7 @@ class ModificaContattoComponent {
         this.putData.email = '';
     }
     updateContatto() {
-        this.http.put(`http://localhost:8080/contacts/`, this.putData).subscribe();
+        this.http.put(`https://agendaspring.herokuapp.com/`, this.putData).subscribe();
         this.router.navigate(['/agenda']); //redirect to the agenda
     }
 }
@@ -1225,7 +1225,7 @@ class RegistraContattoComponent {
         this.http = http;
         this.router = router;
         this.service = service;
-        this.url = "http://localhost:8080/contacts/";
+        this.url = "https://agendaspring.herokuapp.com/";
         this.postData = {
             nome: '',
             cognome: '',

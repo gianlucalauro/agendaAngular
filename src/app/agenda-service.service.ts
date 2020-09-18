@@ -14,15 +14,15 @@ export class AgendaServiceService {
   constructor(private http: HttpClient, public router: Router) { }
 
   public getContatti(id_account = this.account.id ,key) {
-    return this.http.get(`http://localhost:8080/contacts/${id_account}?keyword=${key}`);
+    return this.http.get(`https://agendaspring.herokuapp.com/${id_account}?keyword=${key}`);
   }
 
   public getTuttiContatti(id_account = this.account.id) {
-    return this.http.get(`http://localhost:8080/contacts/${id_account}`);
+    return this.http.get(`https://agendaspring.herokuapp.com/${id_account}`);
   }
 
   public deleteContatto(identifier) {
-    return this.http.delete(`http://localhost:8080/contacts/${identifier}`);
+    return this.http.delete(`https://agendaspring.herokuapp.com/${identifier}`);
   }
 
   public getAccount(nickname, password) {
@@ -30,7 +30,7 @@ export class AgendaServiceService {
   }
 
   public test() {
-    return this.http.get('http://localhost:8080/contacts/test');
+    return this.http.get('https://agendaspring.herokuapp.com/test');
   }
 
   public handleError(error: Response | any) {

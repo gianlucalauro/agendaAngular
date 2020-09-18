@@ -12,7 +12,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegistraContattoComponent implements OnInit {
   persona: any;
 
-  url = "http://localhost:8080/contacts/";
+  url = "https://agendaspring.herokuapp.com/";
   postData = {
     nome: '',
     cognome: '',
