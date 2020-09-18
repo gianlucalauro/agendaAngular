@@ -9,8 +9,6 @@ var port = process.env.PORT || 8000
 app.listen(port)
 console.log('server started ' + port)
 
-app.get('/*', function (req, res) {
-  const fullPath = path.join(__dirname + '/dist/index.html');
-  console.log(" Fetching from.." + fullPath);
-  res.sendFile(fullPath);
-})
+app.get('*', function (req, res) {
+    res.sendfile('./dist/index.html'); // load our index.html file
+  });
