@@ -13,6 +13,11 @@ server.listen(port, function() {
 
 // PathLocationStrategy
 
-app.get('/', function(req, res){
+app.get('', function(req, res) {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
     res.redirect('/agenda');
- });
+});
