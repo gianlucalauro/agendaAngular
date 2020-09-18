@@ -61,6 +61,7 @@ class AgendaServiceService {
     test() {
         return this.http.get('https://agendaspring.herokuapp.com/contacts/test');
     }
+    //https://agendaspring.herokuapp.com/
     handleError(error) {
         if (error.status == 0) {
             this.router.navigate(['error']);
