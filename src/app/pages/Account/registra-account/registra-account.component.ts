@@ -29,7 +29,7 @@ export class RegistraAccountComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  url = "http://localhost:8080/account/";
+  url = "https://agendaspring.herokuapp.com/account/";
   postData = {
     nickname: '',
     password: '',

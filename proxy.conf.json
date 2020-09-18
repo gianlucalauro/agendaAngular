@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://localhost:8080/agenda/all",
+      "target": "https://agendaspring.herokuapp.com/agenda/all",
       "secure": false
     }
 }

@@ -47,19 +47,19 @@ class AgendaServiceService {
         this.account = JSON.parse(localStorage.getItem("Account"));
     }
     getContatti(id_account = this.account.id, key) {
-        return this.http.get(`https://agendaspring.herokuapp.com/${id_account}?keyword=${key}`);
+        return this.http.get(`https://agendaspring.herokuapp.com/contacts/${id_account}?keyword=${key}`);
     }
     getTuttiContatti(id_account = this.account.id) {
-        return this.http.get(`https://agendaspring.herokuapp.com/${id_account}`);
+        return this.http.get(`https://agendaspring.herokuapp.com/contacts/${id_account}`);
     }
     deleteContatto(identifier) {
-        return this.http.delete(`https://agendaspring.herokuapp.com/${identifier}`);
+        return this.http.delete(`https://agendaspring.herokuapp.com/contacts/${identifier}`);
     }
     getAccount(nickname, password) {
-        return this.http.get(`http://localhost:8080/account/?nickname=${nickname}&password=${password}`);
+        return this.http.get(`https://agendaspring.herokuapp.com/account/?nickname=${nickname}&password=${password}`);
     }
     test() {
-        return this.http.get('https://agendaspring.herokuapp.com/test');
+        return this.http.get('https://agendaspring.herokuapp.com/contacts/test');
     }
     handleError(error) {
         if (error.status == 0) {
@@ -699,7 +699,7 @@ class RegistraAccountComponent {
             nickname: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
             password: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required)
         });
-        this.url = "http://localhost:8080/account/";
+        this.url = "https://agendaspring.herokuapp.com/account/";
         this.postData = {
             nickname: '',
             password: '',
@@ -1107,7 +1107,7 @@ class ModificaContattoComponent {
         this.putData.email = '';
     }
     updateContatto() {
-        this.http.put(`https://agendaspring.herokuapp.com/`, this.putData).subscribe();
+        this.http.put(`https://agendaspring.herokuapp.com/contacts/`, this.putData).subscribe();
         this.router.navigate(['/agenda']); //redirect to the agenda
     }
 }
@@ -1225,7 +1225,7 @@ class RegistraContattoComponent {
         this.http = http;
         this.router = router;
         this.service = service;
-        this.url = "https://agendaspring.herokuapp.com/";
+        this.url = "https://agendaspring.herokuapp.com/contacts/";
         this.postData = {
             nome: '',
             cognome: '',
