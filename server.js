@@ -1,22 +1,10 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const port = process.env.PORT || 8000;
-const server = require('http').Server(app);
+var express = require('express')
+var path = require('path')
+var serveStatic = require('serve-static')
 
-app.use(express.static(__dirname, 'dist', {index: false}));
+var app = express()
+app.use(serveStatic(path.join(__dirname, 'dist')))
 
-
-server.listen(port, function() {
-    console.log("App running on port " + port);
-})
-
-// PathLocationStrategy
-
-app.get('', function(req, res) {
-    res.sendFile(path.join(__dirname, 'src', 'index.html'));
-});
-
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'src', 'index.html'));
-});
+var port = process.env.PORT || 8000
+app.listen(port)
+console.log('server started ' + port)
