@@ -22,6 +22,10 @@ export class RegistraAccountComponent implements OnInit {
       (error) => this.service.handleError(error)
     );
 
+    if(this.service.account != undefined) {
+      this.router.navigate(['/agenda']);
+    }
+
   }
 
   registrazioneForm = new FormGroup({
@@ -35,9 +39,21 @@ export class RegistraAccountComponent implements OnInit {
     password: '',
   };
 
+  accountreg: any;
+
+  /* let Account = this.service.getAccount(this.postData.nickname, this.postData.password)
+  localStorage.setItem("Account", JSON.stringify(Account)), */
+
   registraAccount() {
-    this.http.post(this.url, this.postData).subscribe();
-    this.router.navigate(['/agenda']);
+    this.http.post(this.url, this.postData).subscribe(
+      (response: any) => {
+        let Account = { id: response.id, nickname: response.nickname }
+        localStorage.setItem("Account", JSON.stringify(Account))
+        location.reload()
+        this.router.navigate(['/agenda'])
+      },
+      (error) => document.getElementById("erroreReg").innerHTML = "Errore, nickname già preso"
+    );
   }
 
   resetAll() {

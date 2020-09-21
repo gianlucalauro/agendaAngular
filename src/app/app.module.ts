@@ -29,6 +29,7 @@ import { RegistraAccountComponent } from './pages/Account/registra-account/regis
 import { LoginComponent } from './pages/Account/login/login.component';
 import { LogoutComponent } from './pages/Account/logout/logout.component';
 import { CoronavirusComponent } from './coronavirus/coronavirus.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CoronavirusComponent } from './coronavirus/coronavirus.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatExpansionModule
   ],
   providers: [AgendaServiceService],
   bootstrap: [AppComponent]

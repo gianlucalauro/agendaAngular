@@ -18,11 +18,12 @@
         <input matInput [(ngModel)]="postData.password" formControlName="password" minlength="3" maxlength="15" type="password">
         <mat-error>Inserire una password valida</mat-error>
       </mat-form-field>
+
+        <div id="erroreReg"></div>
   
       <br>
   
-      <button mat-raised-button color="primary" (click)="registraAccount()" [disabled]="!registrazioneForm.valid"> Registra
-      </button>
       <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
+      <button mat-raised-button color="primary" (click)="registraAccount()" [disabled]="!registrazioneForm.valid">Registra</button>
     </form>
   </mat-card>

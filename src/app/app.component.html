@@ -26,7 +26,7 @@
 
     <router-outlet></router-outlet>
 
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-drawer #drawer class="example-sidenav" mode="over">
       <button mat-raised-button color="primary" routerLink="/agenda" class="button">
         <i class="fa fa-address-book" aria-hidden="true"></i>
         Contatti
@@ -36,26 +36,36 @@
         <i class="fa fa-user-plus" aria-hidden="true"></i>
         Registra contatto
       </button>
-      
-      <div class="account">
-      <button mat-raised-button color="primary" routerLink="/login" class="button">
-        <i class="fa fa-sign-in" aria-hidden="true"></i>
-        Login
-      </button>
-      <br> <br>
-      <button mat-raised-button color="primary" (click)="logOut()" class="button">
-        <i class="fa fa-sign-out" aria-hidden="true"></i>
-        Logout
-      </button>
-      <br> <br>
-      <button mat-raised-button color="primary" routerLink="/registrazione" class="button">
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-        Registra account
-      </button>
-    </div>
+
+      <br><br>
+
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Account
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-raised-button color="primary" routerLink="/login" class="button">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            Login
+          </button>
+          <br> <br>
+          <button mat-raised-button color="primary" (click)="logOut()" class="button">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Logout
+          </button>
+          <br> <br>
+          <button mat-raised-button color="primary" routerLink="/registrazione" class="button">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            Registra account
+          </button>
+        </mat-expansion-panel>
+      </mat-accordion>
 
       <br>
-      <p>developed by Gianluca Lauro</p>
+      <p>developed by Gianluca Lauro</p>  
 
     </mat-drawer>
   </mat-drawer-container>

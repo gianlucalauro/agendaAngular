@@ -33,8 +33,6 @@ export class AgendaServiceService {
     return this.http.get('https://agendaspring.herokuapp.com/contacts/test');
   }
 
-  //https://agendaspring.herokuapp.com/
-
   public handleError(error: Response | any) {
     if(error.status == 0) {
       this.router.navigate(['error']);
