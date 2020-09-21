@@ -12,7 +12,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegistraContattoComponent implements OnInit {
   persona: any;
 
-  url = "https://agendaspring.herokuapp.com/contacts/";
   postData = {
     nome: '',
     cognome: '',
@@ -41,7 +40,7 @@ export class RegistraContattoComponent implements OnInit {
   }
 
   creaContatto() {
-    this.http.post(this.url, this.postData).subscribe();
+    this.http.post(this.service.herokuURLContacts, this.postData).subscribe();
     this.router.navigate(['/agenda']);
   }
 

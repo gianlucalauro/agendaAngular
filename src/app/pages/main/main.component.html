@@ -19,12 +19,13 @@
 
   <br> <br>
 
+  <!--
   <table mat-table [dataSource]="persona" class="mat-elevation-z8">
 
-    <!--<ng-container matColumnDef="id">
+  <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID </th>
     <td mat-cell *matCellDef="let person"> {{person.id}} </td>
-  </ng-container> -->
+  </ng-container>
 
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
@@ -63,5 +64,35 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  </table> -->
+
+
+  
+  <div class="contatti" *ngFor="let person of persona">
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="nomeCognome">
+          {{person.nome}}  {{person.cognome}}
+        </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      Numero: {{person.numero}}  
+      <br>
+      Email: {{person.email}} 
+
+      <div class="azioni">
+        <button mat-icon-button (click)="passaContatto(person)">
+          <mat-icon class="fa fa-pencil-square-o fa-2x" aria-hidden="true"> </mat-icon>
+        </button>
+        <button mat-icon-button (click)="eliminaContatto(person)">
+          <mat-icon class="fa fa-trash fa-2x" aria-hidden="true"> </mat-icon>
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+
 </mat-card>

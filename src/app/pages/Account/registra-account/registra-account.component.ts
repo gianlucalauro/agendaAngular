@@ -33,7 +33,6 @@ export class RegistraAccountComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  url = "https://agendaspring.herokuapp.com/account/";
   postData = {
     nickname: '',
     password: '',
@@ -45,7 +44,7 @@ export class RegistraAccountComponent implements OnInit {
   localStorage.setItem("Account", JSON.stringify(Account)), */
 
   registraAccount() {
-    this.http.post(this.url, this.postData).subscribe(
+    this.http.post(this.service.herokuURLAccount, this.postData).subscribe(
       (response: any) => {
         let Account = { id: response.id, nickname: response.nickname }
         localStorage.setItem("Account", JSON.stringify(Account))

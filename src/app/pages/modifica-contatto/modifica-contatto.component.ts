@@ -39,7 +39,7 @@ export class ModificaContattoComponent implements OnInit {
   }
 
   updateContatto() {
-    this.http.put(`https://agendaspring.herokuapp.com/contacts/`, this.putData).subscribe();
+    this.http.put(`${this.service.herokuURLContacts}`, this.putData).subscribe();
     this.router.navigate(['/agenda']); //redirect to the agenda
   }
 
