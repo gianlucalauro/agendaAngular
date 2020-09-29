@@ -1,0 +1,22 @@
+<mat-card>
+  <h1>
+    Recupero Account
+  </h1>
+
+  <br>
+
+  <form [formGroup]="formEmail">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="recover.email" formControlName="email" minlength="8" maxlength="50">
+      <mat-error>Inserire una email valida</mat-error>
+    </mat-form-field>
+  </form>
+
+  <br>
+
+  <button mat-raised-button color="primary" (click)="recupera()">Recupera</button>
+  
+  <div id="ok"></div>
+
+</mat-card>

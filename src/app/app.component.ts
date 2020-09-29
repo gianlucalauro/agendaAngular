@@ -10,7 +10,7 @@ export class AppComponent {
 
   title = 'agenda';
   showFiller = false;
-  isTrue: boolean = JSON.parse(localStorage.getItem("isTrue"));
+  isTrue: boolean = JSON.parse(window.localStorage.getItem("isTrue"));
 
   color: ThemePalette = 'accent';
   checked = false;
@@ -18,11 +18,11 @@ export class AppComponent {
 
   changeTheme() {
     this.isTrue = !this.isTrue;
-    localStorage.setItem("isTrue", JSON.stringify(this.isTrue));
+    window.localStorage.setItem("isTrue", JSON.stringify(this.isTrue));
   }
 
   logOut() {
-    localStorage.removeItem("Account");
+    window.localStorage.removeItem("Account");
     window.location.reload();
   }
   

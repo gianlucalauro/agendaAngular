@@ -8,6 +8,11 @@ import { RegistraAccountComponent } from './pages/Account/registra-account/regis
 import { LoginComponent } from './pages/Account/login/login.component';
 import { LogoutComponent } from './pages/Account/logout/logout.component';
 import { CoronavirusComponent } from './coronavirus/coronavirus.component';
+import { CheckactivatedComponent } from './pages/Account/checkactivated/checkactivated.component';
+import { ActiveaccountComponent } from './pages/Account/activeaccount/activeaccount.component';
+import { RecuperoaccountComponent } from './pages/Account/recuperoaccount/recuperoaccount.component';
+import { UpdateaccountComponent } from './pages/Account/updateaccount/updateaccount.component';
+
 
 const routes: Routes = [
   {path: "", redirectTo:"agenda", pathMatch:"full"},
@@ -18,7 +23,11 @@ const routes: Routes = [
   {path: "registrazione", component: RegistraAccountComponent},
   {path: "login", component: LoginComponent},
   {path: "logout", component: LogoutComponent},
-  {path: "coronavirus", component: CoronavirusComponent}
+  {path: "coronavirus", component: CoronavirusComponent},
+  {path: "checkactivated", component: CheckactivatedComponent},
+  {path: "active", component: ActiveaccountComponent},
+  {path: "recupero", component: RecuperoaccountComponent},
+  {path: "updateaccount", component: UpdateaccountComponent}
 ];
 
 @NgModule({

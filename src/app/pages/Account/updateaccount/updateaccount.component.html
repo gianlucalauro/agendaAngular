@@ -1,0 +1,30 @@
+<mat-card>
+    <h1>
+      Aggiorna l'Account
+    </h1>
+  
+    <br>
+  
+    <form [formGroup]="updateForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="recoverData.password" formControlName="password" minlength="3" maxlength="15" type="password">
+        <mat-error>Inserire una email valida</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Conferma password</mat-label>
+        <input matInput [(ngModel)]="recoverData.passwordconfirm" formControlName="passwordconfirm" minlength="3" maxlength="15" type="password">
+        <mat-error>Inserire una email valida</mat-error>
+      </mat-form-field>
+    </form>
+  
+    <br>
+  
+    <button mat-raised-button color="primary" (click)="update()">Update</button>
+
+    <div id="modificato"></div>
+    <div id="errore"></div>
+    <div id="noMatch"></div>
+
+  </mat-card>

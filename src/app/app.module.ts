@@ -30,6 +30,10 @@ import { LoginComponent } from './pages/Account/login/login.component';
 import { LogoutComponent } from './pages/Account/logout/logout.component';
 import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { CheckactivatedComponent } from './pages/Account/checkactivated/checkactivated.component';
+import { ActiveaccountComponent } from './pages/Account/activeaccount/activeaccount.component';
+import { RecuperoaccountComponent } from './pages/Account/recuperoaccount/recuperoaccount.component';
+import { UpdateaccountComponent } from './pages/Account/updateaccount/updateaccount.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
     RegistraAccountComponent,
     LoginComponent,
     LogoutComponent,
-    CoronavirusComponent
+    CoronavirusComponent,
+    CheckactivatedComponent,
+    ActiveaccountComponent,
+    RecuperoaccountComponent,
+    UpdateaccountComponent
   ],
   imports: [
     BrowserModule,

@@ -30,34 +30,34 @@ export class RegistraAccountComponent implements OnInit {
 
   registrazioneForm = new FormGroup({
     nickname: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    password: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email])
   })
 
   postData = {
     nickname: '',
     password: '',
+    email: ''
   };
 
   accountreg: any;
 
-  /* let Account = this.service.getAccount(this.postData.nickname, this.postData.password)
-  localStorage.setItem("Account", JSON.stringify(Account)), */
-
   registraAccount() {
     this.http.post(this.service.herokuURLAccount, this.postData).subscribe(
       (response: any) => {
-        let Account = { id: response.id, nickname: response.nickname }
-        localStorage.setItem("Account", JSON.stringify(Account))
-        location.reload()
+        let Account = {id: response.id, nickname: response.nickname, email: response.email, activated: response.activated}
+        window.localStorage.setItem("Account", JSON.stringify(Account))
+        window.location.reload()
         this.router.navigate(['/agenda'])
       },
-      (error) => document.getElementById("erroreReg").innerHTML = "Errore, nickname già preso"
+      (error) => document.getElementById("erroreReg").innerHTML = "Errore, nickname o email già preso"
     );
   }
 
   resetAll() {
     this.postData.nickname = '';
     this.postData.password = '';
+    this.postData.email= '';
   }
 
 }

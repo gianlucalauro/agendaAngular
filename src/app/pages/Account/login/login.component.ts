@@ -35,11 +35,11 @@ export class LoginComponent implements OnInit {
   login() {
     //chiamata rest per il controllo delle credenziali
     this.service.getAccount(this.loggedIn.nickname, this.loggedIn.password).subscribe(
-      (response : any) => {
+      (response: any) => {
         if(response != null) {
-          let Account = {id: response.id, nickname: response.nickname}
-          localStorage.setItem("Account", JSON.stringify(Account));
-          location.reload();
+          let Account = {id: response.id, nickname: response.nickname, email: response.email, activated: response.activated}
+          window.localStorage.setItem("Account", JSON.stringify(Account));
+          window.location.reload();
         } else {
           document.getElementById("erroreLogin").innerHTML="Errore, nickname o password errati"
         }

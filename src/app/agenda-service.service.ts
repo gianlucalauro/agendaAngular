@@ -9,7 +9,7 @@ export class AgendaServiceService {
 
   details: any;
 
-  account = JSON.parse(localStorage.getItem("Account"));
+  account = JSON.parse(window.localStorage.getItem("Account"));
 
   herokuURLContacts = "https://agendaspring.herokuapp.com/contacts/";
   herokuURLAccount = "https://agendaspring.herokuapp.com/account/";
@@ -45,6 +45,12 @@ export class AgendaServiceService {
   public checkConnection(response: Response | any) {
     if(response.status == 200) {
       this.router.navigate(['/agenda']);
+    }
+  }
+
+  public checkIfActivated() {
+    if (this.account.activated == false || this.account.activated == "") {
+      this.router.navigate(['/checkactivated']);
     }
   }
 

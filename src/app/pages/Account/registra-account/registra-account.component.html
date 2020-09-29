@@ -1,29 +1,35 @@
 <mat-card>
-    <h1>
-      <i class="fa fa-user-plus" aria-hidden="true"></i>
-      Registra un nuovo account
-    </h1>
-  
-    <br>
-  
-    <form [formGroup]="registrazioneForm">
-      <mat-form-field appearance="fill">
-        <mat-label>Nickname</mat-label>
-        <input matInput [(ngModel)]="postData.nickname" formControlName="nickname" minlength="3" maxlength="15">
-        <mat-error>Inserire un nickname valido</mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="container">
-        <mat-label>Password</mat-label>
-        <input matInput [(ngModel)]="postData.password" formControlName="password" minlength="3" maxlength="15" type="password">
-        <mat-error>Inserire una password valida</mat-error>
-      </mat-form-field>
+  <h1>
+    <i class="fa fa-user-plus" aria-hidden="true"></i>
+    Registra un nuovo account
+  </h1>
 
-        <div id="erroreReg"></div>
-  
-      <br>
-  
-      <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
-      <button mat-raised-button color="primary" (click)="registraAccount()" [disabled]="!registrazioneForm.valid">Registra</button>
-    </form>
-  </mat-card>
+  <br>
+
+  <form [formGroup]="registrazioneForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nickname</mat-label>
+      <input matInput [(ngModel)]="postData.nickname" formControlName="nickname" minlength="3" maxlength="15">
+      <mat-error>Inserire un nickname valido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="postData.email" formControlName="email" minlength="3" maxlength="50">
+      <mat-error>Inserire una email valida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="container">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="postData.password" formControlName="password" minlength="3" maxlength="15" type="password">
+      <mat-error>Inserire una password valida</mat-error>
+    </mat-form-field>
+
+      <div id="erroreReg"></div>
+
+    <br>
+
+    <button mat-stroked-button color="warn" (click)="resetAll()">Cancella</button>
+    <button mat-raised-button color="primary" (click)="registraAccount()" [disabled]="!registrazioneForm.valid">Registra</button>
+  </form>
+</mat-card>

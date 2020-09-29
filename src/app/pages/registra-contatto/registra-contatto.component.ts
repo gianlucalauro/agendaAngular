@@ -37,6 +37,8 @@ export class RegistraContattoComponent implements OnInit {
       this.postData.idAccount = this.service.account.id;
     }
 
+    this.service.checkIfActivated();
+
   }
 
   creaContatto() {
