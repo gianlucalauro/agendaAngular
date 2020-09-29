@@ -27,12 +27,12 @@
     <router-outlet></router-outlet>
 
     <mat-drawer #drawer class="example-sidenav" mode="over">
-      <button mat-raised-button color="primary" routerLink="/agenda" class="button">
+      <button mat-raised-button color="primary" routerLink="/agenda" class="button" (click)="drawer.toggle()">
         <i class="fa fa-address-book" aria-hidden="true"></i>
         Contatti
       </button>
       <br> <br>
-      <button mat-raised-button color="primary" routerLink="/form" class="button">
+      <button mat-raised-button color="primary" routerLink="/form" class="button" (click)="drawer.toggle()">
         <i class="fa fa-user-plus" aria-hidden="true"></i>
         Registra contatto
       </button>
@@ -47,7 +47,7 @@
               <mat-icon>account_circle</mat-icon>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <button mat-raised-button color="primary" routerLink="/login" class="button">
+          <button mat-raised-button color="primary" routerLink="/login" class="button" (click)="drawer.toggle()">
             <i class="fa fa-sign-in" aria-hidden="true"></i>
             Login
           </button>
@@ -57,7 +57,7 @@
             Logout
           </button>
           <br> <br>
-          <button mat-raised-button color="primary" routerLink="/registrazione" class="button">
+          <button mat-raised-button color="primary" routerLink="/registrazione" class="button" (click)="drawer.toggle()">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
             Registra account
           </button>

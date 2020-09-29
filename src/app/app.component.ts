@@ -9,7 +9,6 @@ import {ThemePalette} from '@angular/material/core';
 export class AppComponent {
 
   title = 'agenda';
-  showFiller = false;
   isTrue: boolean = JSON.parse(window.localStorage.getItem("isTrue"));
 
   color: ThemePalette = 'accent';
