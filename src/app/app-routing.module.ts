@@ -12,6 +12,7 @@ import { CheckactivatedComponent } from './pages/Account/checkactivated/checkact
 import { ActiveaccountComponent } from './pages/Account/activeaccount/activeaccount.component';
 import { RecuperoaccountComponent } from './pages/Account/recuperoaccount/recuperoaccount.component';
 import { UpdateaccountComponent } from './pages/Account/updateaccount/updateaccount.component';
+import { Error404Component } from './pages/error404/error404.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: "checkactivated", component: CheckactivatedComponent},
   {path: "active", component: ActiveaccountComponent},
   {path: "recupero", component: RecuperoaccountComponent},
-  {path: "updateaccount", component: UpdateaccountComponent}
+  {path: "updateaccount", component: UpdateaccountComponent},
+  {path: "**", component:  Error404Component}
 ];
 
 @NgModule({

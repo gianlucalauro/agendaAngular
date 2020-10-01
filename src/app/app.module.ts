@@ -34,6 +34,7 @@ import { CheckactivatedComponent } from './pages/Account/checkactivated/checkact
 import { ActiveaccountComponent } from './pages/Account/activeaccount/activeaccount.component';
 import { RecuperoaccountComponent } from './pages/Account/recuperoaccount/recuperoaccount.component';
 import { UpdateaccountComponent } from './pages/Account/updateaccount/updateaccount.component';
+import { Error404Component } from './pages/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { UpdateaccountComponent } from './pages/Account/updateaccount/updateacco
     CheckactivatedComponent,
     ActiveaccountComponent,
     RecuperoaccountComponent,
-    UpdateaccountComponent
+    UpdateaccountComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
