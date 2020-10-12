@@ -19,6 +19,7 @@ export class CheckactivatedComponent implements OnInit {
     } else {
       this.http.get(`https://agendaspring.herokuapp.com/activate?email=${this.service.account.email}&id=${this.service.account.id}`).subscribe();
       window.localStorage.removeItem("Account");
+      window.location.reload();
     }
 
   }
